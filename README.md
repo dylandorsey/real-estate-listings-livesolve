@@ -1,12 +1,32 @@
 # real-estate-listings-livesolve
 
+# SQL
+```SQL
+-- Create table to get set up
+CREATE TABLE "livesolve_listings" (
+    "id" SERIAL PRIMARY KEY,
+    "cost" INT,
+    "sqft" INT,
+    "type" VARCHAR (20),
+    "city" VARCHAR (80),
+    "image_path" VARCHAR (200)
+);
 
+-- Insert a new listing
+INSERT INTO "livesolve_listings" ("cost", "sqft", "type", "city", "image_path")
+VALUES ($1, $2, $3, $4, $5);
+
+-- Select all of the items
+SELECT * FROM "livesolve_listings"
+ORDER BY "id" DESC;
+
+```
 
 
 
 # Weekend Challenge 4 - Angular, Node, Express & SQL
-- [ ] set up server and staic files
-- [ ] Import the data and create SQL queries
+- [x] set up server and static files
+- [x] Import the data and create SQL queries
 - [ ] Create server-side route for GET, POST, DELETE
 - [ ] Dispay items on the DOM
 - [ ] Add client side router
