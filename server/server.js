@@ -1,6 +1,7 @@
 // Requires
 const express = require('express');
 const bodyParser = require('body-parser');
+const listingRouter = require('./routes/listing.router')
 
 // Create app
 const app = express();
@@ -16,6 +17,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
 // Routes will go here
+app.use('/listing', listingRouter);
 
 
 // Set port to listen
