@@ -9,7 +9,7 @@ const app = express();
 // Assign port
 const PORT = 5002;
 
-// Serve static files
+// Serve static files=
 app.use(express.static('server/public'));
 
 // Use body-parser
