@@ -19,10 +19,7 @@ VALUES ($1, $2, $3, $4, $5);
 -- Select all of the items
 SELECT * FROM "livesolve_listings"
 ORDER BY "id" DESC;
-
 ```
-
-
 
 # Weekend Challenge 4 - Angular, Node, Express & SQL
 - [x] set up server and static files

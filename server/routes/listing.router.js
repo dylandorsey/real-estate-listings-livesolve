@@ -51,6 +51,35 @@ router.get('/all', (req, res) => {
     })
 });
 
+// Route that returns all properties for rent
+router.get('/rent', (req, res) => {
+    console.log('GET /all route');
+    let queryText = `SELECT * FROM "livesolve_listings"
+    WHERE "type" = 'rent'
+    ORDER BY "id" DESC;`;
+    pool.query(queryText).then((result) => {
+        res.send(result.rows);
+    }).catch((error) => {
+        console.log('Error making query', error);
+        res.sendStatus(500);
+    })
+});
+
+// Route that returns all properties for sale
+router.get('/sale', (req, res) => {
+    console.log('GET /all route');
+    let queryText = `SELECT * FROM "livesolve_listings"
+    WHERE "type" = 'sale'
+    ORDER BY "id" DESC;`;
+    pool.query(queryText).then((result) => {
+        res.send(result.rows);
+    }).catch((error) => {
+        console.log('Error making query', error);
+        res.sendStatus(500);
+    })
+});
+
+
 // Route that deletes a row
 // localhost:5002/listing/5 <- delete item with the id 5
 // This is written as a route parameter
