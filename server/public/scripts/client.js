@@ -10,7 +10,7 @@ myApp.config(['$routeProvider', function($routeProvider) {
     }).when('/sale', {
         templateUrl: 'views/rent.html',
         controller: 'SaleController as vm'
-    }).otherwise({template: '<h1>404</h1>'});
+    }).otherwise({redirectTo: '/'});
 }]);
 
 
